@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thiagoWald.dsmovie.dto.MovieDTO;
-import com.thiagoWald.dsmovie.service.MovieService;
+import com.thiagoWald.dsmovie.services.MovieService;
 
 @RestController
 @RequestMapping(value="/movies")
 public class MovieController {
-
+	
 	@Autowired
 	private MovieService service;
 	
@@ -22,8 +22,8 @@ public class MovieController {
 	public Page<MovieDTO> findAll(Pageable pageable){
 		return service.findAll(pageable);
 	}
-	@GetMapping(value="/{id}")
-	public MovieDTO findById(@PathVariable Long id) {
+	@GetMapping(value = "/{id}")
+	public MovieDTO findById(@PathVariable Long id){
 		return service.findById(id);
 	}
 }

@@ -11,10 +11,10 @@ public class MovieDTO {
 	private String image;
 	
 	public MovieDTO() {
+		
 	}
 
 	public MovieDTO(Long id, String title, Double score, Integer count, String image) {
-		super();
 		this.id = id;
 		this.title = title;
 		this.score = score;
@@ -22,7 +22,6 @@ public class MovieDTO {
 		this.image = image;
 	}
 	public MovieDTO(Movie movie) {
-		super();
 		id = movie.getId();
 		title = movie.getTitle();
 		score = movie.getScore();
@@ -70,5 +69,5 @@ public class MovieDTO {
 		this.image = image;
 	}
 	
-
+	
 }

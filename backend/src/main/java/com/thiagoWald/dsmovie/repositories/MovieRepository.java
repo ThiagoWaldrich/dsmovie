@@ -7,3 +7,4 @@ import com.thiagoWald.dsmovie.entities.Movie;
 public interface MovieRepository extends JpaRepository<Movie, Long> {
 
 }
+

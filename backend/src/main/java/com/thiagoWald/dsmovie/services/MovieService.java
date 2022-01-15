@@ -1,4 +1,4 @@
-package com.thiagoWald.dsmovie.service;
+package com.thiagoWald.dsmovie.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,14 +12,14 @@ import com.thiagoWald.dsmovie.repositories.MovieRepository;
 
 @Service
 public class MovieService {
-
+	
 	@Autowired
 	private MovieRepository repository;
 	
 	@Transactional(readOnly = true)
-	public Page<MovieDTO> findAll(Pageable pageable){
-		Page <Movie> result = repository.findAll(pageable);
-		Page <MovieDTO> page = result.map(x -> new MovieDTO(x));
+	public Page<MovieDTO> findAll(Pageable pageable) {
+		Page<Movie> result = repository.findAll(pageable);
+		Page<MovieDTO> page = result.map(x -> new MovieDTO(x));
 		return page;
 	}
 	@Transactional(readOnly = true)
@@ -28,5 +28,5 @@ public class MovieService {
 		MovieDTO dto = new MovieDTO(result);
 		return dto;
 	}
-	
+
 }
